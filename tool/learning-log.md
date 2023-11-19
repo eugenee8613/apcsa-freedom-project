@@ -8,9 +8,6 @@ Project: **Game**
 
 10/26/23:
 
-
-X/X/X:
-* Text
 https://kaboomjs.com/kaboomware
 Introduction to Kaboom Js, what is and how does it work
 Sprites and Animation: Kaboom.js allows you to create and manipulate sprites, which are 2D images used in games. Animate these sprites to create movement and actions within the game.
