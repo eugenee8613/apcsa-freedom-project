@@ -19,16 +19,3 @@ onKeyPress("space", () => {
     // .jump() is provided by the body() component
     player.jump()
 })
-
-import kaboom from "kaboom"
-
-const k = kaboom()
-
-k.loadSprite("bean")
-
-k.add([
-	k.pos(120, 80),
-	k.sprite("bean"),
-])
-
-k.onClick(() => k.addKaboom(k.mousePos()))
