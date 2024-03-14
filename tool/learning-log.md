@@ -42,10 +42,63 @@ Progress:
 Basic Intro for Kaboom just created a bean character with a certain position and size.
 Some challenges I had was just going to the site and actually finding the correct code to start off.
 Something that I'm going to try next is add more utilities to the code like adding blocks, grass and obstsacles.
-<!-- 
+<!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
 * Challenges, a-ha moments, etc
 * Questions you still have
 * What you're going to try next
 -->
+
+
+3/11/24
+I addede sprites and objects to make it into an actual game using the code:
+aboom();
+
+    const MOVE_SPEED = 120;
+
+    loadSprite("player", "sprites/player.png");
+    loadSprite("coin", "sprites/coin.png");
+
+    const player = add([
+    sprite("player"),
+    pos(80, 80),
+    origin("center"),
+    ]);
+
+    const coin = add([
+    sprite("coin"),
+    pos(120, 120),
+    origin("center"),
+    ]);
+
+    // Player movement
+    keyDown("d", () => {
+    player.move(MOVE_SPEED, 0);
+    });
+
+    keyDown("a", () => {
+    player.move(-MOVE_SPEED, 0);
+    });
+
+    keyDown("s", () => {
+    player.move(0, MOVE_SPEED);
+    });
+
+    keyDown("w", () => {
+    player.move(0, -MOVE_SPEED);
+    });
+
+    // Collision detection
+    player.collides("coin", (c) => {
+    destroy(c);
+    });
+
+    // Camera follow player
+    const cam = camPos(player.pos);
+
+    // Update function
+    function update() {
+    camPos(cam);
+    }
+Basically the basics of the game I have added to my project.
