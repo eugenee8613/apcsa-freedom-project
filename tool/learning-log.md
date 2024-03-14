@@ -53,7 +53,7 @@ Something that I'm going to try next is add more utilities to the code like addi
 
 3/11/24
 I addede sprites and objects to make it into an actual game using the code:
-aboom();
+kaboom();
 
     const MOVE_SPEED = 120;
 
