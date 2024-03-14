@@ -5,7 +5,6 @@
 
 [Home](../README.md)
 
-Content:
 Given my interest in health and fitness, I decided to incorporate fitness elements into the game. I added "health boosts" that the player collects for points. Here's an example of the addition of health boosts:
 
 ```
