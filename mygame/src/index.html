@@ -1,16 +1,51 @@
-<script type="module">
+    <script type="module">
 
-    // import kaboom lib
-    import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
+    import kaboom from "https://kaboomjs.com/lib/0.5.1/index.js";
 
-    // initialize kaboom context
     kaboom();
 
-    // add a piece of text at position (120, 80)
-    add([
-        text("hello"),
-        pos(120, 80),
+    const MOVE_SPEED = 120;
+
+    loadSprite("player", "sprites/player.png");
+    loadSprite("coin", "sprites/coin.png");
+
+    const player = add([
+    sprite("player"),
+    pos(80, 80),
+    origin("center"),
     ]);
+
+    const coin = add([
+    sprite("coin"),
+    pos(120, 120),
+    origin("center"),
+    ]);
+
+    keyDown("d", () => {
+    player.move(MOVE_SPEED, 0);
+    });
+
+    keyDown("a", () => {
+    player.move(-MOVE_SPEED, 0);
+    });
+
+    keyDown("s", () => {
+    player.move(0, MOVE_SPEED);
+    });
+
+    keyDown("w", () => {
+    player.move(0, -MOVE_SPEED);
+    });
+
+    player.collides("coin", (c) => {
+    destroy(c);
+    });
+
+    const cam = camPos(player.pos);
+
+    function update() {
+    camPos(cam);
+    }
 
 
     </script>
