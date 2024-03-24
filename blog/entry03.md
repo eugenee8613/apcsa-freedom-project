@@ -1,8 +1,8 @@
 # Entry 3
 ##### 2/12/24
 Content:
-So moving foward with the freedom project, I have been adding different parts to the game. I added the default sprites so far. I basically added already all the fundamentals and basicis for it to be a functional game. I added the spritees. I have added the terrain(assests), the positions. I added coins so that 
-The code I used was:
+So moving foward with the freedom project, I have been adding different parts to the game. I added the default sprites so far. I basically added already all the fundamentals and basicis for it to be a functional game. I added the spritees. I have added the terrain(assestTs), the positions. I added coins so that the player can have a score.
+he code I used was:
 ```
     const MOVE_SPEED = 120;
 
