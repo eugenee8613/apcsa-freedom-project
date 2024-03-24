@@ -2,8 +2,8 @@
 ##### 3/18/24
 
 
-Content: So far I have created the MVP which is the minimum product of the game. I have added
-I have now more than the minimun for the game, I added the score, the sprites cam jump over objects, if the sprite hits the objects, the game is over. Also if the sprite hits the objects it makes a funny burp sound. I am getting closer and closer to my finished game.
+Content: So far I have created the MVP which is the minimum product of the game. 
+I have done more than the minimun for the game now, I added the score, the sprites cam jump over objects, if the sprite hits the objects, the game is over. Also if the sprite hits the objects it makes a funny burp sound. I am getting closer and closer to my finished game.
 ```
     import kaboom from "kaboom"
     import "kaboom/global"
@@ -115,7 +115,7 @@ This is my code so far for the game I am creating. Something more I want to add 
 
 
 ## EDP:
-On the Engineering Design Procces I am up to the Improve part because since I created it already, I am currently improving it out so that I can see what I need to add and make better. Another level is what I am currently trying to do, I could also add different terrains (assests). Enemeis would sound like something I would add/improve as well.
+On the Engineering Design Procces I am up to the Improve part because since I created it already, I am currently improving it out so that I can see what I need to add to make it better. Another level is what I am currently trying to do, I could also add different terrains (assests). Enemeis would sound like something I would add/improve as well.
 
 ## Skills:
  I'm starting to get better at debugging and using Google effectively. When I'm coding, I break down the code to understand it better and fix any mistakes. If I get stuck, I search on Google to figure out what went wrong. This helps me learn from my errors and avoid making the same ones again. For example, I recently looked up how to use the function `OnKeyPress` because I wasn't sure how to use it in code. After some research and experimenting with my code, I got it to work. So everytime the user presses `space` the sprite will jump over the objects.
