@@ -101,4 +101,114 @@ kaboom();
     function update() {
     camPos(cam);
     }
-Basically the basics of the game I have added to my project.
+.
+
+
+3/19/24
+I have now basically created most of the game, I added the score, the sprites cam jump over objects, if the sprite hits the objects, the game is over. Also if the sprite hits the objects it makes a funny burp sound.
+```
+    import kaboom from "kaboom"
+    import "kaboom/global"
+
+    const FLOOR_HEIGHT = 48;
+    const JUMP_FORCE = 800;
+    const SPEED = 480;
+
+    kaboom();
+
+    loadSprite("bean", "sprites/bean.png");
+
+    scene("game", () => {
+
+    setGravity(1600);
+
+    const player = add([
+        sprite("bean"),
+        pos(80, 40),
+        area(),
+        body(),
+    ]);
+
+    // floor
+    add([
+        rect(width(), FLOOR_HEIGHT),
+        outline(4),
+        pos(0, height()),
+        anchor("botleft"),
+        area(),
+        body({ isStatic: true }),
+        color(127, 200, 255),
+    ]);
+
+    function jump() {
+        if (player.isGrounded()) {
+            player.jump(JUMP_FORCE);
+        }
+    }
+
+    onKeyPress("space", jump);
+    onClick(jump);
+
+    function spawnTree() {
+
+        add([
+            rect(48, rand(32, 96)),
+            area(),
+            outline(4),
+            pos(width(), height() - FLOOR_HEIGHT),
+            anchor("botleft"),
+            color(255, 180, 255),
+            move(LEFT, SPEED),
+            "tree",
+        ]);
+
+        wait(rand(0.5, 1.5), spawnTree);
+
+    }
+
+    spawnTree();
+
+    player.onCollide("tree", () => {
+        go("lose", score);
+        burp();
+        addKaboom(player.pos);
+    });
+
+    let score = 0;
+
+    const scoreLabel = add([
+        text(score),
+        pos(24, 24),
+    ]);
+
+    onUpdate(() => {
+        score++;
+        scoreLabel.text = score;
+    });
+
+});
+
+    scene("lose", (score) => {
+
+    add([
+        sprite("bean"),
+        pos(width() / 2, height() / 2 - 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    add([
+        text(score),
+        pos(width() / 2, height() / 2 + 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    onKeyPress("space", () => go("game"));
+    onClick(() => go("game"));
+
+});
+
+go("game");
+```
+This is my code so far for the game I am creating.
